@@ -1,0 +1,17 @@
+{
+  "name": "neelic/php-telegram-bot-test-project",
+  "description": "description",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Dan",
+      "email": "salnikov.danila@mail.ru"
+    }
+  ],
+  "require": {
+    "telegram-bot/api": "^2.5",
+    "ext-pdo": "*",
+    "ext-yaml": "*"
+  }
+}
