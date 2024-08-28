@@ -1,0 +1,9 @@
+<?php
+return [
+    'db' => 'mysql',
+    'db_host' => 'localhost',
+    'db_port' => '3306',
+    'db_name' => 'telegram_bot',
+    'db_username' => 'root',
+    'db_password' => '',
+];
