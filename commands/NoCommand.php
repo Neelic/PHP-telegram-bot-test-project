@@ -2,7 +2,6 @@
 
 namespace commands;
 
-use commands\Command;
 use TelegramBot\Api\BotApi;
 use TelegramBot\Api\Exception;
 use TelegramBot\Api\InvalidArgumentException;

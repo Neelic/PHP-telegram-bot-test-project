@@ -31,6 +31,6 @@ class UserTable
             throw new PDOException('User cannot be found');
         }
 
-        return $query->fetchAll();
+        return $query->fetch();
     }
 }

@@ -13,7 +13,7 @@ class Database
 
     protected function __construct()
     {
-        $conf = include_once './db_config.php';
+        $conf = include(__DIR__ . '/db_config.php');
         $this->connection = new PDO (
             "{$conf['db']}:host={$conf['db_host']};port={$conf['db_port']};
                 dbname={$conf['db_name']};", $conf['db_username'], $conf['db_password'],

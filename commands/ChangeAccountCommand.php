@@ -12,6 +12,7 @@ class ChangeAccountCommand implements Command
 {
     private BotApi $bot;
     const CHANGE_ACCOUNT_ANSWER = 'Left on the account: ';
+    const CHANGE_COMMAND = '0';
 
     public function __construct(BotApi $bot)
     {
@@ -20,12 +21,15 @@ class ChangeAccountCommand implements Command
 
     /**
      * @throws Exception
-     * @throws InvalidArgumentException
      */
     public function execute(Update $update): void
     {
-        $message = $update->getMessage();
-        $newCheck = UserLogic::changeCheck($message->getChat()->getId(), intval($message->getText()));
-        $this->bot->sendMessage($update->getMessage()->getChat()->getId(), self::CHANGE_ACCOUNT_ANSWER . $newCheck);
+        try {
+            $message = $update->getMessage();
+            $newCheck = UserLogic::changeCheck($message->getChat()->getId(), floatval($message->getText()));
+            $this->bot->sendMessage($update->getMessage()->getChat()->getId(), self::CHANGE_ACCOUNT_ANSWER . $newCheck);
+        } catch (\InvalidArgumentException $e) {
+            $this->bot->sendMessage($update->getMessage()->getChat()->getId(), $e->getMessage());
+        }
     }
 }
