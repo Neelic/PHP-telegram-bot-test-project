@@ -47,13 +47,15 @@ class Database
         return static::getInstance()->connection;
     }
 
+    public static function beginTransaction(): PDO
+    {
+        $connection = static::connection();
+        $connection->beginTransaction();
+        return $connection;
+    }
+
     public static function prepare($statement): false|PDOStatement
     {
         return static::connection()->prepare($statement);
-    }
-
-    public static function lastInseredID(): int
-    {
-        return intval(static::connection()->lastInsertId());
     }
 }
