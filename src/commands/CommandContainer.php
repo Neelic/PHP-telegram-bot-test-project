@@ -8,7 +8,7 @@ class CommandContainer
 {
     private BotApi $bot;
     private NoCommand $noCommand;
-    private array $commands = [];
+    private array $commands;
 
     public function __construct(BotApi $bot)
     {
@@ -17,6 +17,7 @@ class CommandContainer
 
         $this->commands = [
             ChangeAccountCommand::CHANGE_COMMAND => new ChangeAccountCommand($this->bot),
+            StartCommand::START_COMMAND => new StartCommand($this->bot),
         ];
     }
 
@@ -27,7 +28,7 @@ class CommandContainer
         if ($number) {
             return $this->commands[ChangeAccountCommand::CHANGE_COMMAND];
         } else {
-            return $this->noCommand;
+            return $this->commands[$commandIdentifier] ?? $this->noCommand;
         }
     }
 }
