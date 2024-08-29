@@ -1,6 +1,6 @@
 <?php
 
-namespace commands;
+namespace src\commands;
 
 use TelegramBot\Api\Types\Update;
 

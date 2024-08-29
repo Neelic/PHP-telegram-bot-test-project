@@ -1,8 +1,8 @@
 <?php
 
-namespace user;
+namespace src\user;
 
-use db\Database;
+use src\db\Database;
 use PDOException;
 
 class UserTable

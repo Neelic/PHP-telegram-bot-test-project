@@ -1,6 +1,6 @@
 <?php
 
-namespace commands;
+namespace src\commands;
 
 use TelegramBot\Api\BotApi;
 
@@ -20,7 +20,7 @@ class CommandContainer
         ];
     }
 
-    public function findCommand(string $commandIdentifier)
+    public function findCommand(string $commandIdentifier): Command
     {
         $commandIdentifier = trim($commandIdentifier);
         preg_match('/^-?[0-9]+(|(.|,)[0-9]+)$/u', $commandIdentifier, $number);

@@ -1,8 +1,8 @@
 <?php
 
-require_once __DIR__ . '/vendor/autoload.php';
+require_once __DIR__ . '/../vendor/autoload.php';
 
-use commands\CommandContainer;
+use src\commands\CommandContainer;
 use TelegramBot\Api\BotApi;
 
 $bot_token = getenv('TELEGRAM_TOKEN');

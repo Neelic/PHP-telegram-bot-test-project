@@ -1,6 +1,6 @@
 <?php
 
-namespace user;
+namespace src\user;
 
 use InvalidArgumentException;
 

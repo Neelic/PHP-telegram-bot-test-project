@@ -1,12 +1,11 @@
 <?php
 
-namespace commands;
+namespace src\commands;
 
 use TelegramBot\Api\BotApi;
 use TelegramBot\Api\Exception;
-use TelegramBot\Api\InvalidArgumentException;
 use TelegramBot\Api\Types\Update;
-use user\UserLogic;
+use src\user\UserLogic;
 
 class ChangeAccountCommand implements Command
 {
